@@ -1,0 +1,11 @@
+{
+  "harry": {
+    "address": "4 Privet Drive"
+  },
+  "bruce": {
+    "address": "Wayne manor"
+  },
+  "clark": {
+    "address": "1938 Sulivan Ln"
+  }
+}
