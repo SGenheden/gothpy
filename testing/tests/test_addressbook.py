@@ -57,12 +57,11 @@ def test_save_load(simple_addressbook, tmpdir):
 
 def test_save(simple_addressbook, mocker):
     patched_dump = mocker.patch("addressbook.addressbook.json.dumps")
-    fileobj = mocker.MagicMock()
-    patched_open = mocker.patch("builtins.open", return_value=fileobj)
+    patched_open = mocker.patch("builtins.open")
     filename = "temp.json"
     simple_addressbook.save(filename)
     patched_open.called_once_with(filename, "w")
-    patched_dump.called_once_with(simple_addressbook.to_dict(), fileobj)
+    patched_dump.called_once_with(simple_addressbook.to_dict(), patched_open.return_value)
     assert not os.path.exists(filename)
 
 
@@ -70,12 +69,11 @@ def test_open(simple_addressbook, mocker):
     patched_load = mocker.patch(
         "addressbook.addressbook.json.load", return_value=simple_addressbook.to_dict()
     )
-    fileobj = mocker.MagicMock()
-    patched_open = mocker.patch("builtins.open", return_value=fileobj)
+    patched_open = mocker.patch("builtins.open")
     a2 = AddressBook()
     a2.load("temp.json")
     patched_open.called_once_with("temp.json", "r")
-    patched_load.called_once_with(fileobj)
+    patched_load.called_once_with(patched_open.return_value)
     assert a2.to_dict() == simple_addressbook.to_dict()
 
 
