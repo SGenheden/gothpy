@@ -92,7 +92,7 @@ replace functions
 
 ### external fixture: datadir (5)
 
-* Create example.json in *data* folder
+Create example.json in *data* folder
 
     @pytest.fixture
     def autosave_addressbook(shared_datadir):
@@ -111,7 +111,8 @@ replace functions
 
 * Explain yield here
 * Show the data folder in $TMP
-* Show how it is modified by delete
+
+Show how it is modified by delete
 
     def test_delete3(autosave_addressbook):
         a = autosave_addressbook
@@ -172,8 +173,7 @@ Side effect
 
 - skip
 
-- custom mark
-
+custom mark
 
     @pytest.mark.external
     def test_save_load(tmpdir):
