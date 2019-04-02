@@ -65,7 +65,7 @@ create tests **package**
 
 ### custom fixture (10)
 
-** simple**
+**simple**
 
     @pytest.fixture
     def simple_addressbook():
@@ -94,7 +94,6 @@ replace functions
 
 * Create example.json in *data* folder
 
-
     @pytest.fixture
     def autosave_addressbook(shared_datadir):
         filename = str(shared_datadir / "example.json")
@@ -113,7 +112,6 @@ replace functions
 * Explain yield here
 * Show the data folder in $TMP
 * Show how it is modified by delete
-
 
     def test_delete3(autosave_addressbook):
         a = autosave_addressbook
