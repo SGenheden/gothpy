@@ -14,9 +14,8 @@ def test_contact(simple_addressbook):
 
 
 def test_query(simple_addressbook):
-    a = simple_addressbook
-    assert a.query("harry")
-    assert not a.query("dr holmes")
+    assert simple_addressbook.query("harry")
+    assert not simple_addressbook.query("dr holmes")
 
 
 def test_delete(simple_addressbook):
@@ -47,3 +46,9 @@ def test_save_load(simple_addressbook, tmpdir):
     a2 = AddressBook()
     a2.load(filename)
     assert a2.to_dict() == a1.to_dict()
+
+
+def test_load(simple_addressbook, shared_datadir):
+    filename = str(shared_datadir / "example.json")
+    simple_addressbook.load(filename)
+    assert len(simple_addressbook.to_dict()) == 3

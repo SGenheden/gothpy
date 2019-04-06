@@ -10,7 +10,7 @@ def simple_addressbook():
 
 
 @pytest.fixture
-def autosave_addressbook(shared_datadir):
+def loaded_addressbook(shared_datadir):
     filename = str(shared_datadir / "example.json")
     with AddressBook(filename) as a:
         yield a
