@@ -3,13 +3,14 @@ import pytest
 from addressbook.addressbook import AddressBook
 
 
-def test_update1(simple_addressbook):
-    assert simple_addressbook.contact("harry") == {"address": "4 Privet Drive"}
+def test_update(simple_addressbook):
+    assert len(simple_addressbook.to_dict()) == 1
+    assert "harry" in simple_addressbook.to_dict()
 
 
-def test_update2(autosave_addressbook):
-    assert autosave_addressbook.contact("harry") == {"address": "4 Privet Drive"}
-    assert autosave_addressbook.contact("clark") == {"address": "1938 Sulivan Ln"}
+def test_contact(simple_addressbook):
+    contact = simple_addressbook.contact("harry")
+    assert contact == {"address": "4 Privet Drive"}
 
 
 def test_query(simple_addressbook):
@@ -19,15 +20,8 @@ def test_query(simple_addressbook):
 
 
 def test_delete(simple_addressbook):
-    a = simple_addressbook
-    a.delete("harry")
-    assert not a.query("harry")
-
-
-def test_delete2(autosave_addressbook):
-    a = autosave_addressbook
-    a.delete("harry")
-    assert not a.query("harry")
+    simple_addressbook.delete("harry")
+    assert len(simple_addressbook.to_dict()) == 0
 
 
 def test_get_none_existing():

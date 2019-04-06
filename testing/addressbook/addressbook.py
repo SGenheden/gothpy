@@ -90,8 +90,9 @@ class AddressBook:
         filename: str
             the path to JSON file with contacts
         """
-        with open(filename, "r") as fileobj:
-            self._contacts = json.load(fileobj)
+        fileobj = open(filename, "r")
+        self._contacts = json.load(fileobj)
+        fileobj.close()
 
     def save(self, filename):
         """
@@ -104,8 +105,9 @@ class AddressBook:
         filename: str
             the path to a file where the address will be written
         """
-        with open(filename, "w") as fileobj:
-            json.dump(self._contacts, fileobj)
+        fileobj = open(filename, "w")
+        json.dump(self._contacts, fileobj)
+        fileobj.close()
 
     def sync(self, auth):
         """
