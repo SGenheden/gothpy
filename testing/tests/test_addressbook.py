@@ -3,31 +3,24 @@ import pytest
 from addressbook.addressbook import AddressBook
 
 
-def test_update1(simple_addressbook):
-    assert simple_addressbook.contact("harry") == {"address": "4 Privet Drive"}
+def test_update(simple_addressbook):
+    assert len(simple_addressbook.to_dict()) == 1
+    assert "harry" in simple_addressbook.to_dict()
 
 
-def test_update2(autosave_addressbook):
-    assert autosave_addressbook.contact("harry") == {"address": "4 Privet Drive"}
-    assert autosave_addressbook.contact("clark") == {"address": "1938 Sulivan Ln"}
+def test_contact(simple_addressbook):
+    contact = simple_addressbook.contact("harry")
+    assert contact == {"address": "4 Privet Drive"}
 
 
 def test_query(simple_addressbook):
-    a = simple_addressbook
-    assert a.query("harry")
-    assert not a.query("dr holmes")
+    assert simple_addressbook.query("harry")
+    assert not simple_addressbook.query("dr holmes")
 
 
 def test_delete(simple_addressbook):
-    a = simple_addressbook
-    a.delete("harry")
-    assert not a.query("harry")
-
-
-def test_delete2(autosave_addressbook):
-    a = autosave_addressbook
-    a.delete("harry")
-    assert not a.query("harry")
+    simple_addressbook.delete("harry")
+    assert len(simple_addressbook.to_dict()) == 0
 
 
 def test_get_none_existing():
@@ -55,13 +48,21 @@ def test_save_load(simple_addressbook, tmpdir):
     assert a2.to_dict() == a1.to_dict()
 
 
+def test_load(simple_addressbook, shared_datadir):
+    filename = str(shared_datadir / "example.json")
+    simple_addressbook.load(filename)
+    assert len(simple_addressbook.to_dict()) == 3
+
+
 def test_save(simple_addressbook, mocker):
-    patched_dump = mocker.patch("addressbook.addressbook.json.dumps")
+    patched_dump = mocker.patch("addressbook.addressbook.json.dump")
     patched_open = mocker.patch("builtins.open")
     filename = "temp.json"
     simple_addressbook.save(filename)
     patched_open.called_once_with(filename, "w")
-    patched_dump.called_once_with(simple_addressbook.to_dict(), patched_open.return_value)
+    patched_dump.called_once_with(
+        simple_addressbook.to_dict(), patched_open.return_value
+    )
     assert not os.path.exists(filename)
 
 
