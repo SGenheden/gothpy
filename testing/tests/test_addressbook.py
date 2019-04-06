@@ -5,7 +5,15 @@ from addressbook.addressbook import AddressBook
 def test_update():
     a = AddressBook()
     a.update("harry", "4 Privet Drive")
-    assert a.contact("harry") == {"address": "4 Privet Drive"}
+    assert len(a.to_dict()) == 1
+    assert "harry" in a.to_dict()
+
+
+def test_contact():
+    a = AddressBook()
+    a.update("harry", "4 Privet Drive")
+    contact = a.contact("harry")
+    assert contact == {"address": "4 Privet Drive"}
 
 
 def test_query():
@@ -19,7 +27,7 @@ def test_delete():
     a = AddressBook()
     a.update("harry", "4 Privet Drive")
     a.delete("harry")
-    assert not a.query("harry")
+    assert len(a.to_dict()) == 0
 
 
 def test_get_none_existing():
