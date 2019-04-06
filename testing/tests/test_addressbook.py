@@ -55,12 +55,14 @@ def test_load(simple_addressbook, shared_datadir):
 
 
 def test_save(simple_addressbook, mocker):
-    patched_dump = mocker.patch("addressbook.addressbook.json.dumps")
+    patched_dump = mocker.patch("addressbook.addressbook.json.dump")
     patched_open = mocker.patch("builtins.open")
     filename = "temp.json"
     simple_addressbook.save(filename)
     patched_open.called_once_with(filename, "w")
-    patched_dump.called_once_with(simple_addressbook.to_dict(), patched_open.return_value)
+    patched_dump.called_once_with(
+        simple_addressbook.to_dict(), patched_open.return_value
+    )
     assert not os.path.exists(filename)
 
 
@@ -100,5 +102,3 @@ def test_sync_failure(simple_addressbook, mocker):
     )
     with pytest.raises(ConnectionError):
         simple_addressbook.sync("usr:pwd")
-
-
