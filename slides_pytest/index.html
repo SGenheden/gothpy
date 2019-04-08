@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>pytest</title>
+
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-white-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="d5118eeadc67379ee2fcd2d79a866e83"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 238px; height: auto;" data-block-id="60eee3f7717ddd6b95f6f7b3641fa741"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>pytest</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="13410d2b220216720c0ac2e02fd2b69a" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 381px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>GothPy meet-up 8/4 2019</p>
+</div></div></section><section data-id="04f0320abb0a1b328de90ee48960b4fa"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 971px; left: 0px; top: 24px;" data-block-id="499d5014043744d141b6564c24df056b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
+<p><strong><span style="font-size:1.2em">Kodcentrum</span></strong></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="5bc705b57fbeb69739f7cc9fbc33744e" style="min-width: 4px; min-height: 4px; width: 345px; height: 528px; left: 586px; top: 127px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="291" data-natural-height="446" data-src="pytest/9016ed82f69876b41e5c56ae35066b91.png"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="a4c8e881f65073dccf7e14c97134b00e" style="height: auto; min-width: 30px; min-height: 30px; width: 507px; left: 20px; top: 140px;"><div class="sl-block-style" style="z-index: 13; transform: rotate(360deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>En ideell förening som helt gratis introducerar<br>
+barn och unga till programmering och digitalt skapande<br>
+ </p>
+
+<p> </p>
+</div></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="fb4d8194e47db97e524f9e2480585621" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 350px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p style="text-align:left">Kodstugor under våren 2019:</p>
+
+<p style="text-align:left">•7 kodstugor</p>
+
+<p style="text-align:left">•Barn och unga 10-12 år</p>
+
+<p style="text-align:left">•Ca 60 volontärer </p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="5a8b6ae9daf26f37f748be21c3908a78" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 576px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+<p><strong>kodcentrum.se</strong></p>
+
+<p><strong>kodboken.se</strong></p>
+</div></div></section><section data-id="76458dc69e48f1f9f7b84c5017cc10b8"><div class="sl-block" data-block-type="image" data-block-id="fc1457767d07620060ca080566cf3203" style="min-width: 4px; min-height: 4px; width: 775px; height: 512px; left: 93px; top: 94px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="775" data-natural-height="512" style="" data-lazy-loaded="" data-src="pytest/8248effb164e6e87835545c5f4e91bde.png"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="fd5919f8100b8099dadfac8f65b148dd" style="height: auto; min-width: 30px; min-height: 30px; width: 971px; left: 0px; top: 24px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+<p><strong><span style="font-size:1.2em">Python Developers Survey 2018</span></strong></p>
+</div></div></section><section data-id="88773b9062c367625a54b000f3980ea6">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 971px; left: 0px; top: 24px;" data-block-id="8b0ab1b6bd62eb513df04b269883ac55"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
+<p><span style="font-size:36px"><strong>What is pytest?</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="71ea7d2e3552d5c56a1f03434ca75eb9" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 124px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p><em><span style="color:rgb(85, 85, 85); text-align:start">pytest is a mature full-featured Python testing tool that helps you write better programs.</span></em></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="a16a480a5e48e13db47c2b4edfbfc3be" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 82px; top: 351px;"><div class="sl-block-style" style="z-index: 13; transform: rotate(360deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<ul>
+	<li>A test runner</li>
+	<li>Simple but powerful assertions</li>
+	<li>Auto-discovery of test modules and functions</li>
+	<li>Powerful fixtures</li>
+	<li>Many external plugins</li>
+</ul>
+</div></div></div></section><section data-id="ad2a942f4508c8d30bc88c13e156c724">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 971px; left: 0px; top: 24px;" data-block-id="1cf40f8fecc1ffa8889c952ed2dfbb5e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
+<p><span style="font-size:36px"><strong>Installation and usage</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="1149390cbdc070c9b2b26721e7c2f7a7" style="min-width: 30px; min-height: 30px; width: 500px; height: 300px; left: 230px; top: 200px;"><div class="sl-block-content notranslate" style="z-index: 12;"><pre><code>$ pip install pytest
+
+$ cd my_project
+
+$ pytest </code></pre></div></div></section><section data-id="c3c4f7ef039d4bf3b71c9b004cfd6cba">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 971px; left: 0px; top: 24px;" data-block-id="247ad44b8541a60b70eea4a2088c750b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
+<p><span style="font-size:36px"><strong>Disclaimer</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="15a37d838ec3ca92de57eb53ec63a526" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 160px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Code is available on: <strong>github.com/sgenheden/gothpy</strong>
+</li>
+	<li>I use python 3.6</li>
+	<li>These are toy examples</li>
+</ul>
+</div></div></section><section data-id="60114b5c398249f52d9c9ae51209668c"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 248px; height: auto;" data-block-id="fff0d3935374e3a5b05ddd6c2cc37b8d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Part 1</h1>
+
+<h1>Simple assertions</h1>
+</div></div></section><section data-id="31d9c486875d3cfdd0e4cea841527435"><div class="sl-block" data-block-type="text" style="height: auto; width: 971px; left: 0px; top: 24px;" data-block-id="54bf8b63646cd8c33efbe06c00aea54c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
+<p><span style="font-size:36px"><strong>Assertions</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="eb7f6c687abaab90adf2d67c27035ac2" style="min-width: 30px; min-height: 30px; width: 500px; height: 198px; left: 230px; top: 200px;"><div class="sl-block-content notranslate" style="z-index: 12;"><pre class="shell"><code>def test_dog:
+    my_dog = Dog() # Arrange
+
+    sound = my_dog.speak() # Act
+
+    assert sound == "voff" # Assert 
+    </code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="a63345b936752ca22aef68fc0f3bc89c" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 471px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger="click" data-animation-trigger-id="eb7f6c687abaab90adf2d67c27035ac2">
+<p>No need for special assert methods with pytest!</p>
+</div></div></section><section data-id="a20637800965217f54c48db936441f64"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 248px; height: auto;" data-block-id="3e8ce0ba5145ef7f2c5492d45d2839f9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Part 2</h1>
+
+<h1>Fixtures</h1>
+</div></div></section><section data-id="23f60e7b1a9c70bf26cc714d0f9b59ff"><div class="sl-block" data-block-type="text" style="height: auto; width: 971px; left: 0px; top: 24px;" data-block-id="bc5e504bb10581317ade5d98e24ea250"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+<p><span style="font-size:36px"><strong>Fixtures</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 140px;" data-block-id="9f95fea998734207dadecfbfa484a604"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<ul>
+	<li>Provides a fixed baseline for tests</li>
+	<li>Enabled re-usable code</li>
+	<li>Provides an abstraction layer</li>
+	<li>pytest fixtures:
+	<ul>
+		<li>have explicit names</li>
+		<li>are scoped (function, module, class etc)</li>
+		<li>are modular</li>
+	</ul>
+	</li>
+	<li>You can
+	<ul>
+		<li>use built-in fixtures</li>
+		<li>write your own fixtures</li>
+		<li>use external fixture packages</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="ccc4216a3dd6b5217f34759b6479c056"><div class="sl-block" data-block-type="text" data-block-id="beb8c79f87b7f3dd368c45d7f480eb9e" style="height: auto; min-width: 30px; min-height: 30px; width: 213px; left: 69px; top: 128px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; background-color: rgb(118, 165, 175); border-style: solid; border-width: 1px; padding: 4px;">
+<pre style="text-align:left"><span style="font-size:0.7em">@pytest.fixture</span>
+<span style="font-size:0.7em">def my_fixture:</span>
+</pre>
+
+<p style="text-align:left"><span style="font-size:0.7em">     do_something()</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="d4fb52937feac53bed6838fbbab054ef" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: -137px; top: 70px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p><strong><span style="font-size:0.7em">1. Declaration + registration</span></strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 213px; left: 370px; top: 257px;" data-block-id="b86e0b33c8dfd1af6697198a5ed4df7e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; border-style: solid; border-width: 1px; padding: 4px; background-color: rgb(255, 217, 102); transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger="click" data-animation-trigger-id="beb8c79f87b7f3dd368c45d7f480eb9e">
+<pre style="text-align:left"><span style="font-size:21px">list_of_fixtures = [...,</span>
+</pre>
+
+<p style="text-align: left;"><span style="font-size:21px">       tmpdir,</span></p>
+
+<p style="text-align: left;"><span style="font-size:21px">       my_fixture]</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 197px; top: 193px;" data-block-id="a67f0ce5b68cce5802ca45023f525927"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger-id="beb8c79f87b7f3dd368c45d7f480eb9e" data-animation-trigger="click">
+<p><strong><span style="font-size:0.7em">2. Book-keeping by pytest</span></strong></p>
+</div></div>
+<div class="sl-block" data-block-type="line" data-block-id="608e06db764c0060d9c31018142f6739" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 149px; top: 257px;"><div class="sl-block-content" data-line-x1="-206" data-line-y1="7" data-line-x2="-206" data-line-y2="106" data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 15; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger-id="beb8c79f87b7f3dd368c45d7f480eb9e" data-animation-trigger="click"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="99" viewbox="-206 7 1 99"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="-206" y1="7" x2="-206" y2="106"></line><line stroke="#000000" stroke-width="2" x1="-206" y1="7" x2="-206" y2="106"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" data-block-id="4fda855f053f4f9722e45f0614702f85" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 149px; top: 356px;"><div class="sl-block-content" data-line-x1="-220" data-line-y1="106" data-line-x2="1" data-line-y2="106" data-line-color="#000000" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index: 16; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger-id="beb8c79f87b7f3dd368c45d7f480eb9e" data-animation-trigger="click"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="221" height="1" viewbox="-220 106 221 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="-220" y1="106" x2="-1" y2="106"></line><line stroke="#000000" stroke-width="2" x1="-220" y1="106" x2="-1" y2="106"></line><path style="fill: rgba(0,0,0,0);" stroke="#000000" stroke-width="2" transform="translate(-1,106) rotate(90)" d="M 6 6 L 0 0 L -6 6"></path></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 449px; top: 420px;" data-block-id="758a9bd38fd565024f14b0f45e4b7ecd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger="click" data-animation-trigger-id="b86e0b33c8dfd1af6697198a5ed4df7e">
+<p><strong><span style="font-size:0.7em">3. Injection by pytest</span></strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 316px; left: 612px; top: 476px;" data-block-id="58b1b19b4b8d6f0c4c6a6edcf678d296"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; background-color: rgb(182, 215, 168); border-style: solid; border-width: 1px; padding: 4px; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger-id="b86e0b33c8dfd1af6697198a5ed4df7e" data-animation-trigger="click">
+<pre style="text-align:left"><span style="font-size:21px">def my_test(my_fixture):</span>
+<span style="font-size:0.7em">    action()</span>
+   <span style="font-size:0.7em">assertion()</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 469px; top: 432px;" data-block-id="a850a5b6189fa6e31a5ac1aae1eb90cd"><div class="sl-block-content" data-line-x1="-206" data-line-y1="7" data-line-x2="-206" data-line-y2="117" data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 19; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger-id="b86e0b33c8dfd1af6697198a5ed4df7e" data-animation-trigger="click"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="110" viewbox="-206 7 1 110"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="-206" y1="7" x2="-206" y2="117"></line><line stroke="#000000" stroke-width="2" x1="-206" y1="7" x2="-206" y2="117"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" data-block-id="3ebc1a62dc011c07cf783515236a31e5" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 469px; top: 542px;"><div class="sl-block-content" data-line-x1="100" data-line-y1="292" data-line-x2="243" data-line-y2="292" data-line-color="#000000" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index: 20; transition-duration: 0.6s;" data-animation-type="fade-in" data-animation-trigger-id="b86e0b33c8dfd1af6697198a5ed4df7e" data-animation-trigger="click"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="143" height="1" viewbox="100 292 143 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="100" y1="292" x2="241" y2="292"></line><line stroke="#000000" stroke-width="2" x1="100" y1="292" x2="241" y2="292"></line><path style="fill: rgba(0,0,0,0);" stroke="#000000" stroke-width="2" transform="translate(241,292) rotate(90)" d="M 6 6 L 0 0 L -6 6"></path></svg></div></div></section><section data-id="56894bb03d0a425fec42b8019bbc511a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 248px; height: auto;" data-block-id="b1034fb1f93be74768f1dbe235d77943"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Part 3</h1>
+
+<h1>mocking</h1>
+</div></div></section><section data-id="d485074ffe47efbb77e4eb1c8c4fd47f"><div class="sl-block" data-block-type="text" style="height: auto; width: 971px; left: 0px; top: 24px;" data-block-id="acc448062334bb3b72182c3d4a03eb30"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+<p><span style="font-size:36px"><strong>Mocking</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 140px;" data-block-id="35362c081866ae30d819677a9afb5b89"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<ul>
+	<li style="text-align: left;">What if you have a dependency towards an external API, a database or a hardware?</li>
+	<li style="text-align: left;">Mocking replaces that component with patched objects that you use in testing</li>
+	<li style="text-align: left;">You can assert how the mocked component have been used by your code</li>
+	<li style="text-align: left;">Available in the standard library: <strong>unittest.mock</strong>
+</li>
+	<li style="text-align: left;">Available as a pytest fixture through <strong>pytest-mock </strong>package</li>
+</ul>
+</div></div></section><section data-id="03c3dda97cf30c29f741605834957a1e"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 248px; height: auto;" data-block-id="800056a0cd5c9cdbe4306f0b0d06b3d9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Part 4</h1>
+
+<h1>other cool things</h1>
+</div></div></section><section data-id="359aa24235a1f822548eb6ef9ad95569"><div class="sl-block" data-block-type="text" style="height: auto; width: 971px; left: 0px; top: 24px;" data-block-id="695540393e47728421a7e426649949b8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+<p><span style="font-size:36px"><strong>pytest is powerfull</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 140px;" data-block-id="8606b53cbfe6ae7d0409ab4fae814dae"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<ul>
+	<li style="text-align:left">pytest allows powerful marking of test cases
+	<ul>
+		<li style="text-align:left">skipping test cases / suites</li>
+		<li style="text-align:left">custom marking</li>
+		<li style="text-align:left">parameterised marking </li>
+	</ul>
+	</li>
+	<li style="text-align:left">customisable test execution 
+	<ul>
+		<li style="text-align:left">custom command-line arguments</li>
+		<li style="text-align:left">dynamic collection of test cases</li>
+		<li style="text-align:left">expected failures</li>
+	</ul>
+	</li>
+	<li style="text-align:left">plugins
+	<ul>
+		<li style="text-align:left">use one several hundres of packages</li>
+		<li style="text-align:left">create your own</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="20661b4b2ae85b2d31a90deadf210a65"><div class="sl-block" data-block-type="text" data-block-id="81909c29c463bb910ad9d1db4864e903" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 331px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p>Questions?</p>
+</div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":1467277,"slug":"pytest","title":"pytest","description":"","width":960,"height":700,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/a69e228b711a261db05cae06084e879f/thumb.jpg?1554538450","view_count":0,"user":{"id":1030315,"username":"samuelgenheden","name":"Samuel Genheden","description":null,"thumbnail_url":"https://lh4.googleusercontent.com/-kQw_zqwAzAc/AAAAAAAAAAI/AAAAAAAAADE/TSl3qYGyCc4/photo.jpg","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":2951570,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":16,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1554560095658,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":null,"notes":{}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/reveal.min.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 960,
+				height: 700,
+				margin: 0.05,
+				maxScale: 1,
+
+				hash: true,
+				controls: true,
+				progress: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: false,
+
+				autoSlide: 0,
+				autoSlideStoppable: true,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+
+				transition: "slide",
+				backgroundTransition: "slide",
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'lib/reveal-plugins/zoom/zoom.js', async: true }
+				]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
